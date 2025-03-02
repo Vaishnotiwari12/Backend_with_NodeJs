@@ -31,13 +31,20 @@ const addTask = (task) => {
 
 // List all tasks
 const listTasks = () => {
-  const tasks = loadTasks();
-  if (tasks.length === 0) {
-    console.log("No tasks found.");
-  } else {
-    tasks.forEach((task, index) => console.log(`${index + 1}. ${task.task}`));
-  }
-};
+    const tasks = loadTasks();
+    console.log("Loaded tasks:", tasks); // Debugging line
+  
+    if (tasks.length === 0) {
+      console.log("No tasks found.");
+    } else {
+      tasks.forEach((task, index) => {
+        console.log("Task structure:", task); // Debugging line
+        console.log(`${index + 1}. ${task.task}`);
+      });
+    }
+  };
+  
+  
 
 // Remove a task by index
 const removeTask = (index) => {
